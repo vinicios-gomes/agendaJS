@@ -4,11 +4,10 @@ const routes = express.Router();
 
 const ContatoController = require("./controllers/ContatoController");
 
-routes.post("/contato", ContatoController.createContato);
-routes.get("/contato", ContatoController.listContato);
-routes.get("/contato/:id", ContatoController.showContato);
-routes.put("/contato/:id", ContatoController.atualizaContato);
-routes.delete("/contato/:id", ContatoController.deletaContato);
-// routes.get("/contato", (req, res) => {});
+routes.post("/contato", ContatoController.store);
+routes.get("/contato", ContatoController.index);
+routes.post("/solicita", ContatoController.show);
+routes.put("/contato/:id", ContatoController.update);
+routes.delete("/contato/:id", ContatoController.delete);
 
 module.exports = routes;
