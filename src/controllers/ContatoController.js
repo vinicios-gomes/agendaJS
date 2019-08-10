@@ -13,9 +13,7 @@ class ContatoController {
   //mostra contato
 
   async show(req, res) {
-    const { nome } = req.body;
-
-    const contato = await Contato.findOne({ nome });
+    const contato = await Contato.findById(req.params.id);
 
     return res.json(contato);
   }
